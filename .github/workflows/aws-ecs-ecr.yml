@@ -24,7 +24,7 @@
 #    See the documentation for each action used below for the recommended IAM policies for this IAM user,
 #    and best practices on handling the access key credentials.
 
-name: Build and Push Docker Image to ECR
+name: Build, Push Docker Image to ECR and Deploy to ECS
 
 on:
   push:
@@ -58,7 +58,7 @@ jobs:
         docker push kristinelin.dkr.ecr.ap-southeast-1.amazonaws.com/my-repo:1
 
 
-name: Deploy to Amazon ECS
+#Deploy to Amazon ECS#
 
 on:
   push:
