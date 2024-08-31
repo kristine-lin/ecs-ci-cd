@@ -26,10 +26,10 @@
 
 name: Build, Push Docker Image to ECR and Deploy to ECS
 
-on:
-  push:
-    branches:
-      - main  # or any branch you want to trigger this workflow
+# on:
+#   push:
+#     branches:
+#       - main  # or any branch you want to trigger this workflow
 
 jobs:
   build-and-push:
