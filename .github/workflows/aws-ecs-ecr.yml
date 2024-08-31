@@ -32,8 +32,10 @@ name: Build, Push Docker Image to ECR and Deploy to ECS
 #       - main  # or any branch you want to trigger this workflow
 
 jobs:
-  build-and-push:
+  build-and-push-and-deploy:
+    name: build, push and deploy
     runs-on: ubuntu-latest
+    environment: dev
 
     steps:
     - name: Checkout code
@@ -75,11 +77,11 @@ env:
 # permissions:
 #   contents: read
 
-jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    environment: dev
+# jobs:
+#   deploy:
+#     name: Deploy
+#     runs-on: ubuntu-latest
+#     environment: dev
 
     steps:
     - name: Checkout
