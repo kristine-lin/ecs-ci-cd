@@ -31,6 +31,17 @@ name: Build, Push Docker Image to ECR and Deploy to ECS
 #     branches:
 #       - main  # or any branch you want to trigger this workflow
 
+on:
+  push:
+    branches: [ "main" ]
+
+env:            
+  AWS_REGION: ap-southeast-1           
+  ECR_REPOSITORY: slim/simple-node-app/kristine
+  ECS_SERVICE: ecsdemo         
+  ECS_CLUSTER: ecs-tf                     
+  CONTAINER_NAME: ecs-sample   
+
 jobs:
   build-and-push-and-deploy:
     name: build, push and deploy
@@ -62,16 +73,16 @@ jobs:
 
 #Deploy to Amazon ECS#
 
-on:
-  push:
-    branches: [ "main" ]
+# on:
+#   push:
+#     branches: [ "main" ]
 
-env:            
-  AWS_REGION: ap-southeast-1           
-  ECR_REPOSITORY: slim/simple-node-app/kristine
-  ECS_SERVICE: ecsdemo         
-  ECS_CLUSTER: ecs-tf                     
-  CONTAINER_NAME: ecs-sample         
+# env:            
+#   AWS_REGION: ap-southeast-1           
+#   ECR_REPOSITORY: slim/simple-node-app/kristine
+#   ECS_SERVICE: ecsdemo         
+#   ECS_CLUSTER: ecs-tf                     
+#   CONTAINER_NAME: ecs-sample         
                                                
 
 # permissions:
